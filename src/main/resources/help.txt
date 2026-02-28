@@ -1,0 +1,13 @@
+IntelliJ steps:
+
+Run → Edit Configurations
+
+Select your Spring Boot run config
+
+In VM Options, add:
+
+-Duser.timezone=UTC
+
+Apply → Run again
+
+---------------------------------------------------
