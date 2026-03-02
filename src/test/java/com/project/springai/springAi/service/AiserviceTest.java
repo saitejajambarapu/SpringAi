@@ -15,7 +15,7 @@ public class AiserviceTest {
 
     @Test
     public void testGetJoke(){
-        var joke=aiservice.getjoke("Dogs");
+        String joke=aiservice.askAI("What is Machine Learning?");
         System.out.println(joke);
     }
 
