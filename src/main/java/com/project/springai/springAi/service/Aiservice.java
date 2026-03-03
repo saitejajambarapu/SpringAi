@@ -28,6 +28,7 @@ public class Aiservice {
     private VectorStore vectorStore;
 
 
+
     public String askAI(String prompt){
 
         return  chatClient.prompt()

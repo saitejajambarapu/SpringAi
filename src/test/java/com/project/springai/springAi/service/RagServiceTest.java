@@ -20,4 +20,13 @@ public class RagServiceTest {
         String joke=ragService.askAI("What is Machine Learning?");
         System.out.println(joke);
     }
+
+    @Test
+    public void askAiWithAdvisor(){
+//        String joke=ragService.askAIWithAdvisor("What is Machine Learning? and my name is sai", "sai2714");
+        String joke=ragService.askAIWithAdvisor("What is Spring AI ?", "shiva123");
+        System.out.println(joke);
+    }
+
+
 }

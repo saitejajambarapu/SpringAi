@@ -1,10 +1,25 @@
 spring:
   application:
-      name: springAi
+    name: springAi
+
+  datasource:
+    url: jdbc:postgresql://localhost:5434/my-vector-db
+    username: my-user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
   ai:
     vectorstore:
       pgvector:
         initialize-schema: true
+
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+            table-name: chat_memory
+
     ollama:
       base-url: http://localhost:11434
       chat:
@@ -13,26 +28,9 @@ spring:
       embedding:
         options:
           model: nomic-embed-text
-#    openai:
-#      api-key: key
-#      chat:
-#        options:
-#          model: gpt-4o-mini
-#          temperature: 0.9
-#      embedding:
-#        options:
-#          model: text-embedding-3-small
-
-  datasource:
-    url: jdbc:postgresql://localhost:5434/my-vector-db
-    username: my-user
-    password: password
-    driver-class-name: org.postgresql.Driver
 
 logging:
   level:
-#    com.zaxxer.hikari: DEBUG
+  # com.zaxxer.hikari: DEBUG
     org.springframework.ai:
-     chat.client: DEBUG
-
-
+            chat.client: DEBUG
